@@ -2,6 +2,7 @@ from flask import Flask
 from flask_socketio import SocketIO, emit
 
 import endless_stream_mic
+import file_audio
 from flask import jsonify
 
 #eventlet
@@ -23,6 +24,14 @@ def start_record():
     transcript_rec = endless_stream_mic.main()
 
     return jsonify(transcript=transcript_rec)
+
+@app.route('/api/upload')
+def upload():
+    print('hello')
+    transcript_file = file_audio.main()
+
+    print(transcript_file)
+    return jsonify(transcript=transcript_file)
 
 @socketio.on('message')
 def handle_message(message):
