@@ -2,6 +2,7 @@ import React from 'react';
 
 import Typography from '@material-ui/core/Typography';
 import NavButton from '../components/NavButton';
+import MainMenuButton from '../components/MainMenuButton'
 
 class Navigation extends React.Component{
 
@@ -10,22 +11,18 @@ class Navigation extends React.Component{
     }
 
     showNextOnClick1 = () =>{
-        this.setState({showNext:!this.state.showNext})
         this.props.changePage('home')
     }
 
     showNextOnClick2 = () =>{
-        this.setState({showNext:!this.state.showNext})
-        this.props.changePage('options')
+        this.props.changePage('start')
     }
 
     showNextOnClick3 = () =>{
-        this.setState({showNext:!this.state.showNext})
         this.props.changePage('home')
     }
 
     showNextOnClick4 = () =>{
-        this.setState({showNext:!this.state.showNext})
         this.props.changePage('home')
     }
 
@@ -33,10 +30,18 @@ class Navigation extends React.Component{
 
 		return (
             <div>
-                <NavButton text={'Project Name'} callBack={this.showNextOnClick1}/>
-                <NavButton text={'Recording'} callBack={this.showNextOnClick1}/>
-                <NavButton text={'Files'} callBack={this.showNextOnClick1}/>
-                <NavButton text={'Account'} callBack={this.showNextOnClick1}/>
+                <MainMenuButton 
+                    text={'Project Name'} 
+                    callBack={this.showNextOnClick1}/>
+                <NavButton 
+                    text={'Recording'} 
+                    callBack={this.showNextOnClick2}/>
+                <NavButton 
+                    text={'Files'} 
+                    callBack={this.showNextOnClick3}/>
+                <NavButton 
+                    text={'Account'} 
+                    callBack={this.showNextOnClick4s}/>
             </div>
         );
 	}

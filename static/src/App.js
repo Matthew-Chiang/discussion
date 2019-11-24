@@ -9,6 +9,17 @@ import FileUpload from './pages/FileUpload';
 import Navigation from './components/Navigation';
 import Loading from './pages/Loading';
 
+// import BackgroundImage from './components/background';
+
+import Background from './image/main.png';
+
+var sectionStyle = {
+  // width: "100%",
+  // height: "400px",
+  // backgroundImage: `url(${Background})`,
+  backgroundImage: "url(" + Background + ")"
+};
+
 class App extends React.Component{
   state = {
     control : 'home',
@@ -45,15 +56,25 @@ class App extends React.Component{
 
   render(){
     return (
-      <div>
-        <Navigation/>
+      <div className="main-image-first">
+        {/* <section style={ sectionStyle }> */}
+        {/* <BackgroundImage/> */}
+        <Navigation changePage={this.controlCallBack}/>
         {this.switchPages(this.state.control)}
-  
+        {/* </section> */}
       </div>
       // <Typography>hello from typeography</Typography>
     );
   }
   
 }
+
+// .main-image-first {
+//   /* position: relative; */
+//   background-image: url('./images/abstract-access.jpg');
+//   height: 500px;
+//   width: 200px;
+// }
+
 
 export default App;
