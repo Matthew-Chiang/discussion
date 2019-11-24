@@ -9,23 +9,31 @@ import { subscribeToTimer } from '../socket/api';
 class Recording extends React.Component{
     state = {
         record : false,
-        timestamp: 'no default value'
+        transcript :"",
     }
 
-    constructor(props){
-        super(props)
-
-        // subscribeToTimer((err,timestamp) =>{
-        //     console.log('he')
-        //     this.setState({timestamp:timestamp})
-        // })
-    }
-    
-    timeout = 1000;
+    apiCall = async () => {
+        try {
+            var response = await fetch("api/record");
+            
+            if (!response.ok) {
+                throw Error(response.statusText);
+            }
+            const json = await response.json();
+            const text = json.transcript;
+            console.log(json)
+            this.setState({ transcript: text},()=>{
+                this.props.callBack(text)
+            })
+        } catch (error) {
+            console.log(error);
+        }
+      };
 
 
     componentDidMount(){
         this.setState({record:true})
+        this.apiCall()
     }
 
     stopRecording = ()=> {
@@ -33,8 +41,9 @@ class Recording extends React.Component{
     }
 
     onData = (recordedBlob) => {
+        console.log('chunk')
         // console.log('chunk', recordedBlob)
-        subscribeToTimer((recordedBlob));
+        // subscribeToTimer((recordedBlob));
     };
 
 	render(){
@@ -53,10 +62,12 @@ class Recording extends React.Component{
                     strokeColor="#000000"
                     backgroundColor="#FF4081" 
                 />
-
-                <Typography>
-                    {this.state.timestamp}
-                </Typography>
+                {/* {this.state.transcript.length > 0 &&
+                    <Typography>
+                        {this.state.transcript}
+                    </Typography>
+                } */}
+                
 
                 <My_Button text={'Stop Recording'} callBack={this.stopRecording}/>
             </div>
