@@ -41,5 +41,3 @@ export default class UploadButtons extends React.Component {
         );
   }
 }
-
-export default UploadButtons

@@ -2,7 +2,7 @@ import React from 'react';
 import My_Button from '../components/Button';
 import Typography from '@material-ui/core/Typography';
 import Navigation from '../components/Navigation';
-import './HomePage.css'
+import './Display.css'
 // import Background from '../image/Desktop.png';
 
 // var sectionStyle = {
@@ -25,12 +25,9 @@ class HomePage extends React.Component{
 	render(){
 
 		return (
-            <div className="main-image-first">
+            <div className="display_image">
                 <Navigation/>
-                <My_Button text={'Start'} callBack={this.showNextOnClick}/>
-                {this.state.showNext &&
-                    <h1> showing stuff</h1>
-                }
+                
             </div>
             
         );

@@ -8,6 +8,7 @@ import NewRecording from './pages/NewRecording';
 import FileUpload from './pages/FileUpload';
 import Navigation from './components/Navigation';
 import Loading from './pages/Loading';
+import Display from './pages/Display'
 
 // import BackgroundImage from './components/background';
 
@@ -49,7 +50,7 @@ class App extends React.Component{
         );
       case 'loading':
         return(
-          <Loading changePage={this.controlCallBack}/>
+          <Display changePage={this.controlCallBack}/>
         )
     }
   }
