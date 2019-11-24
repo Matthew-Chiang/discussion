@@ -16,7 +16,7 @@ import clsx from 'clsx';
 
 
 
-class NavButton extends React.Component{
+class MainMenuButton extends React.Component{
 	// const buttonClass = clsx(useStyles.root);
 	onClick = () =>{
 		if (this.props.callBack){
@@ -28,9 +28,7 @@ class NavButton extends React.Component{
 
 		return(
 			<Button 
-				classes={{
-					disableRipple: true, disableFocusRipple: true}}
-				style={{ backgroundColor: 'transparent', fontFamily:'Lato', fontStyle:'normal', fontWeight: '300', fontSize:'24px'}}		
+				style={{ backgroundColor: 'transparent', fontFamily:'Lato', fontStyle:'normal', fontWeight: 'normal', fontSize:'36px'}}		
 				// style = {{'&:hover': }}
 				className="my-button"
 				onClick={this.onClick}>
@@ -40,4 +38,4 @@ class NavButton extends React.Component{
 	}
 }
 
-export default NavButton
+export default MainMenuButton

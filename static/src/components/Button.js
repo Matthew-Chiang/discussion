@@ -3,18 +3,6 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 
-// const useStyles = makeStyles({
-// 	root: {
-// 		width: '249 px',
-// 		height: '76 px',
-// 		background: '#639CF9',
-// 		boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(255, 255, 255, 0.4)',
-// 		borderRadius: '50px',
-// 	},
-// });
-
-
-
 class My_Button extends React.Component{
 	// const buttonClass = clsx(useStyles.root);
 	onClick = () =>{
@@ -26,7 +14,14 @@ class My_Button extends React.Component{
 	render(){
 
 		return(
-			<Button variant="contained" onClick={this.onClick}>
+			<Button 
+				style = {{
+							background:'#639CF9', 
+							borderRadius: '50px', 
+							boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(255, 255, 255, 0.4)", 
+							color:"#FFFFFF"}}
+				variant="contained" 
+				onClick={this.onClick}>
 				{this.props.text}
 			</Button>
 		);
