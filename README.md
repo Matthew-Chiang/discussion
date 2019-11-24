@@ -7,8 +7,25 @@ Discussion is a tool to help users transcribe and determine key topics being dis
 
 For this app, you will need both node, python and the google-cloud-speech authentication credentials. Use the requirements.txt (in the server folder) and package.json (in the static folder) to determine dependencies for the server and the front-end.
 
+To Start the Frontend Service, 
+
+```bash
+  cd static
+  npm install #only needed for the first run
+  npm start
+```
+
+To Start the Backend Service,
+
+```bash
+  cd server
+  pip install -r requirements.txt
+  python app.py
+```
+
+
 ### Getting Google Cloud Authentication
 
-Follow this guide by google: https://cloud.google.com/speech-to-text/docs/quickstart-client-libraries to create your google api credentials.
+Follow this guide by [google:](https://cloud.google.com/speech-to-text/docs/quickstart-client-libraries) to create your google api credentials.
 
 
