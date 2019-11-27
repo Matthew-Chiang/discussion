@@ -58,13 +58,10 @@ class App extends React.Component{
   render(){
     return (
       <div className="main-image-first">
-        {/* <section style={ sectionStyle }> */}
-        {/* <BackgroundImage/> */}
         <Navigation changePage={this.controlCallBack}/>
+
         {this.switchPages(this.state.control)}
-        {/* </section> */}
       </div>
-      // <Typography>hello from typeography</Typography>
     );
   }
   

@@ -3,6 +3,7 @@ import My_Button from '../components/Button';
 import Typography from '@material-ui/core/Typography';
 import UploadButton from '../components/UploadButton';
 import LoadFile from '../components/LoadFile';
+import Display from '../pages/Display';
 
 
 class FileUpload extends React.Component{
@@ -35,9 +36,10 @@ class FileUpload extends React.Component{
                 }
 
                 {this.state.transcript.length > 0 &&
-                    <Typography>
-                        {this.state.transcript}
-                    </Typography>
+                    // <Typography>
+                    //     {this.state.transcript}
+                    // </Typography>
+                    <Display text={this.state.transcript}/>
                 }
             </div>
 

@@ -3,6 +3,7 @@ import My_Button from '../components/Button';
 import Typography from '@material-ui/core/Typography';
 import Navigation from '../components/Navigation';
 import Recording from '../components/Recording';
+import Display from '../pages/Display';
 
 
 class NewRecording extends React.Component{
@@ -17,7 +18,6 @@ class NewRecording extends React.Component{
 
     showNextOnClick = () =>{
         this.setState({showNext:!this.state.showNext})
-        // this.props.changePage('loading')
     }
 
     showTextOnClick = (transcript_text) => {
@@ -36,9 +36,7 @@ class NewRecording extends React.Component{
                     <Recording callBack={this.showTextOnClick}/>
                 }
                 {this.state.transcript.length != 0 &&
-                    <Typography>
-                        {this.state.transcript}
-                    </Typography>
+                    <Display text={this.state.transcript}/>
                 }
 
             </div>

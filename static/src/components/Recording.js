@@ -13,6 +13,7 @@ class Recording extends React.Component{
     }
 
     apiCall = async () => {
+        // telling the backend to start recording - should be replaced with a web socket
         try {
             var response = await fetch("api/record");
             
@@ -42,6 +43,7 @@ class Recording extends React.Component{
 
     onData = (recordedBlob) => {
         console.log('chunk')
+        //socket code
         // console.log('chunk', recordedBlob)
         // subscribeToTimer((recordedBlob));
     };
@@ -62,14 +64,7 @@ class Recording extends React.Component{
                     strokeColor="#000000"
                     backgroundColor="#FF4081" 
                 />
-                {/* {this.state.transcript.length > 0 &&
-                    <Typography>
-                        {this.state.transcript}
-                    </Typography>
-                } */}
                 
-
-                <My_Button text={'Stop Recording'} callBack={this.stopRecording}/>
             </div>
             
         );

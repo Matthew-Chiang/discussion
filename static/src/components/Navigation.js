@@ -15,11 +15,11 @@ class Navigation extends React.Component{
     }
 
     showNextOnClick2 = () =>{
-        this.props.changePage('start')
+        this.props.changePage('record')
     }
 
     showNextOnClick3 = () =>{
-        this.props.changePage('home')
+        this.props.changePage('upload')
     }
 
     showNextOnClick4 = () =>{
@@ -31,7 +31,7 @@ class Navigation extends React.Component{
 		return (
             <div>
                 <MainMenuButton 
-                    text={'Project Name'} 
+                    text={'Discussion'} 
                     callBack={this.showNextOnClick1}/>
                 <NavButton 
                     text={'Recording'} 
@@ -41,7 +41,7 @@ class Navigation extends React.Component{
                     callBack={this.showNextOnClick3}/>
                 <NavButton 
                     text={'Account'} 
-                    callBack={this.showNextOnClick4s}/>
+                    callBack={this.showNextOnClick4}/>
             </div>
         );
 	}

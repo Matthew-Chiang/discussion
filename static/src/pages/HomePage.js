@@ -14,7 +14,8 @@ import './HomePage.css'
 
 class HomePage extends React.Component{
     state = {
-        showNext : false
+        showNext : false,
+        control:''
     }
 
     showNextOnClick = () =>{
@@ -22,11 +23,15 @@ class HomePage extends React.Component{
         this.props.changePage('start')
     }
 
+    controlCallBack = (pageName)=>{
+    this.setState({control:pageName})
+    }
+
 	render(){
 
 		return (
             <div className="main-image-first">
-                <Navigation/>
+                <Navigation />
                 <My_Button text={'Start'} callBack={this.showNextOnClick}/>
                 {this.state.showNext &&
                     <h1> showing stuff</h1>
