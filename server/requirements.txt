@@ -28,4 +28,4 @@ pickleshare==0.7.5
 PyAudio==0.2.11
 python-socketio==4.3.1
 requests==2.22.0
-urllib3==1.25.7
+urllib3==1.26.5
